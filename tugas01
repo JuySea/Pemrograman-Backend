@@ -1,0 +1,39 @@
+<?php
+
+class Animal{
+    public  $animal = ["anjing","kucing","jerapah"];
+
+    # method index - menampilkan data animals
+    public function index(){
+        foreach ($this->animal as $aml){
+            echo $aml;
+            echo '<br />';
+        }
+        # gunakan foreach untuk menampilkan data animals (array)
+    }
+
+    # method store - menambahkan hewan baru
+    # parameter: hewan baru
+    public function store($data){
+        array_push($this->animal, $data);
+        # gunakan method array_push untuk menambahkan data baru
+    }
+
+    # method update - mengupdate hewan
+    # parameter: index dan hewan baru
+    public function update($index, $data){
+        array_splice($this->animal, $index);
+        array_push($this->animal, $data);
+    }
+
+    # method delete - menghapus hewan
+    # parameter: index
+    public function destroy($data)
+    {
+        array_splice($this->animal, $data);
+        # gunakan method unset atau array_splice untuk menghapus data array
+    }
+}
+
+
+
